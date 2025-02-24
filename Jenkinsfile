@@ -5,22 +5,22 @@ pipeline{
     }
     stages{
         stage('Checkout'){
-            steps:{
+            steps {
                 git branch: 'main', url: 'https://github.com/JennyZhang2022/COMP367-Lab02-Q2.git'
             }
         }
         stage('Build'){
-            steps:{
+            steps {
                 sh 'mvn clean package'
             }
         }
         stage('Test'){
-            steps:{
+            steps {
                 sh 'mvn test'
             }
         }
         stage('Deploy'){
-            steps:{
+            steps {
                 echo 'Deploying Spring Boot Application........'
             }
         }
